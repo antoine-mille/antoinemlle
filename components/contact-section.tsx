@@ -2,10 +2,10 @@ import { ContactForm } from "@/components/contact-form"
 
 const ContactSection = () => {
   return (
-    <section className="mt-12 px-4 space-y-6 md:px-12 lg:px-24">
+    <section className="mt-12 space-y-6 px-4 md:px-12 lg:px-24">
       <h2 className="text-xl text-gray-900 sm:text-2xl">
         Vous souhaitez me&nbsp;
-        <span className="text-secondary font-semibold">contacter</span> ?
+        <span className="font-semibold text-secondary">contacter</span> ?
       </h2>
       <ContactForm />
     </section>

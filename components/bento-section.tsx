@@ -16,7 +16,7 @@ const features = [
         alt=""
         width={128}
         height={128}
-        className="size-32 rounded-full object-cover absolute left-1/2 -translate-x-1/2 translate-y-10"
+        className="absolute left-1/2 size-32 -translate-x-1/2 translate-y-10 rounded-full object-cover"
       />
     ),
     className: "row-start-1 row-end-1 col-start-1 col-end-4 sm:col-end-3",

@@ -143,11 +143,11 @@ const ContactForm = () => {
             initialText={
               <span className="group inline-flex items-center text-white">
                 Soumettre&nbsp;
-                <ChevronRightIcon className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                <ChevronRightIcon className="ml-1 size-4 transition-transform duration-300 group-hover:translate-x-1" />
               </span>
             }
             changeText={
-              <span className="group inline-flex gap-2 items-center">
+              <span className="group inline-flex items-center gap-2">
                 <CheckIcon className="size-4" />
                 Envoyé !
               </span>

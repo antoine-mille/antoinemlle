@@ -28,15 +28,15 @@ const ProjectCard = ({
 }: ProjectCardProps) => {
   return (
     <article className="flex flex-col gap-3">
-      <div className="flex justify-between items-center">
+      <div className="flex items-center justify-between">
         <div className="flex flex-col">
-          <h3 className="text-lg text-primary font-medium">{title}</h3>
+          <h3 className="text-lg font-medium text-primary">{title}</h3>
           <p className="text-xs text-gray-700 sm:max-w-xs">{context}</p>
         </div>
 
         {githubUrl && (
           <Link href={githubUrl} target="_blank" className="pl-8">
-            <LucideGithub className="size-6 text-gray-700 duration-300 transition-colors hover:text-gray-900" />
+            <LucideGithub className="size-6 text-gray-700 transition-colors duration-300 hover:text-gray-900" />
           </Link>
         )}
       </div>
