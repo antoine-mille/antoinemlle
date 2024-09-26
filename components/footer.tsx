@@ -19,11 +19,9 @@ const Footer = ({ className }: FooterProps) => {
           Antoine Mille
         </p>
         <p className="text-gray-300 text-sm max-w-xs text-center">
-          Je suis dans le{" "}
-          <span className="text-secondary font-medium">
-            développement informatique
-          </span>{" "}
-          depuis mes 13 ans.
+          Codez vos idées, façonnez{" "}
+          <span className="font-medium text-secondary">l’avenir</span> du{" "}
+          <span className="font-medium text-secondary">web</span>.
         </p>
       </div>
 
