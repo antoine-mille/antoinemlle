@@ -1,0 +1,48 @@
+import Image from "next/image"
+import { BentoCard, BentoGrid } from "@/components/magicui"
+import profilPic from "@/public/images/antoine.png"
+import { CompassIcon, HandIcon } from "lucide-react"
+
+const features = [
+  {
+    Icon: CompassIcon,
+    name: "Mon parcours",
+    description: "Découvrez mon parcours professionnel.",
+    href: "/career",
+    cta: "En savoir plus",
+    background: (
+      <Image
+        src={profilPic}
+        alt=""
+        width={128}
+        height={128}
+        className="size-32 rounded-full object-cover absolute left-1/2 -translate-x-1/2 translate-y-10"
+      />
+    ),
+    className: "row-start-1 row-end-1 col-start-1 col-end-4 sm:col-end-3",
+  },
+  {
+    Icon: HandIcon,
+    name: "Mes services",
+    description: "Découvrez les services que je propose.",
+    href: "/services",
+    cta: "En savoir plus",
+    className:
+      "row-start-2 row-end-2 sm:row-start-1 sm:row-start-1 sm:col-start-3 sm:col-end-4",
+    background: undefined,
+  },
+]
+
+const BentoSection = () => {
+  return (
+    <section className="mt-12 px-4 md:px-12 lg:px-24">
+      <BentoGrid>
+        {features.map((feature) => (
+          <BentoCard key={feature.name} {...feature} />
+        ))}
+      </BentoGrid>
+    </section>
+  )
+}
+
+export { BentoSection }
