@@ -1,5 +1,6 @@
 import { ArrowDownButton } from "@/components/arrow-down-button"
 import dynamic from "next/dynamic"
+import { Section } from "./section"
 
 const IconCloud = dynamic(
   () => import("@/components/magicui/icon-cloud").then((mod) => mod.IconCloud),
@@ -32,7 +33,7 @@ const slugs = [
 
 const HeroSection = () => {
   return (
-    <section className="flex flex-col items-center px-4 pt-12 md:px-12 lg:px-24">
+    <Section className="flex flex-col items-center" withDotPattern>
       <div className="space-y-3">
         <h1 className="text-center text-2xl font-semibold text-gray-900 sm:text-3xl lg:text-4xl">
           Antoine Mille, <br /> développeur web fullstack !
@@ -53,7 +54,7 @@ const HeroSection = () => {
         </div>
       </div>
       <ArrowDownButton className="mt-[25rem]" />
-    </section>
+    </Section>
   )
 }
 

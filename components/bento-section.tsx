@@ -2,6 +2,7 @@ import Image from "next/image"
 import { BentoCard, BentoGrid } from "@/components/magicui"
 import profilPic from "@/public/images/antoine.png"
 import { CompassIcon, HandIcon } from "lucide-react"
+import { Section } from "@/components/section"
 
 const features = [
   {
@@ -13,7 +14,7 @@ const features = [
     background: (
       <Image
         src={profilPic}
-        alt=""
+        alt="Photo de profil d'Antoine Mille"
         width={128}
         height={128}
         className="absolute left-1/2 size-32 -translate-x-1/2 translate-y-10 rounded-full object-cover"
@@ -35,13 +36,13 @@ const features = [
 
 const BentoSection = () => {
   return (
-    <section className="mt-12 px-4 md:px-12 lg:px-24">
+    <Section id="discover">
       <BentoGrid>
         {features.map((feature) => (
           <BentoCard key={feature.name} {...feature} />
         ))}
       </BentoGrid>
-    </section>
+    </Section>
   )
 }
 

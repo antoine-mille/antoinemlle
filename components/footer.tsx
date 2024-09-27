@@ -10,7 +10,7 @@ const Footer = ({ className }: FooterProps) => {
   return (
     <footer
       className={cn(
-        "min-h-36 bg-gray-900 w-full flex flex-col gap-4 py-4 items-center justify-center",
+        "bg-gray-900 w-full flex flex-col gap-4 py-4 items-center justify-center",
         className
       )}
     >

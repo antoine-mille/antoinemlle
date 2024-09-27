@@ -82,3 +82,8 @@
     width: 256px !important;
   }
 }
+
+*,
+html {
+  scroll-behavior: smooth !important;
+}

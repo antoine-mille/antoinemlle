@@ -9,22 +9,11 @@ import GoogleCaptchaWrapper from "@/components/google-captcha-wrapper"
 export default function Home() {
   return (
     <GoogleCaptchaWrapper>
-      <main className="relative">
+      <main className="size-full">
         <HeroSection />
         <BentoSection />
         <ProjectSection />
         <ContactSection />
-
-        <DotPattern
-          width={20}
-          height={20}
-          cx={1}
-          cy={1}
-          cr={1}
-          className={cn(
-            "[mask-image:linear-gradient(to_bottom_right,white,transparent,transparent)] "
-          )}
-        />
       </main>
     </GoogleCaptchaWrapper>
   )

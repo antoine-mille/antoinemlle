@@ -1,6 +1,7 @@
 import Link from "next/link"
 import {
   Sheet,
+  SheetClose,
   SheetContent,
   SheetDescription,
   SheetTitle,
@@ -11,9 +12,9 @@ import { LinkIcon } from "@/components/link-icon"
 
 const links = [
   { href: "/services", label: "Services" },
-  { href: "/portfolio", label: "Portfolio" },
+  { href: "/#projects", label: "Portfolio" },
   { href: "/career", label: "Parcours" },
-  { href: "/contact", label: "Me contacter" },
+  { href: "/#contact", label: "Me contacter" },
 ]
 
 const HeaderLeft = () => {
@@ -41,13 +42,14 @@ const MobileNavigation = () => {
         </SheetDescription>
         <nav className="mt-20 flex flex-col items-end gap-4">
           {links.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-lg font-semibold uppercase text-primary transition-colors duration-300 hover:text-secondary"
-            >
-              {link.label}
-            </Link>
+            <SheetClose asChild key={link.href}>
+              <Link
+                href={link.href}
+                className="text-lg font-semibold uppercase text-primary transition-colors duration-300 hover:text-secondary"
+              >
+                {link.label}
+              </Link>
+            </SheetClose>
           ))}
         </nav>
         <div className="mt-auto border-t pt-5">
