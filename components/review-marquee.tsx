@@ -3,6 +3,7 @@ import { Marquee } from "@/components/ui"
 import { cn } from "@/lib/utils"
 
 import anaellePicture from "@/public/images/reviews/anaelle-picture.jpg"
+import florentPicture from "@/public/images/reviews/florent-picture.jpg"
 
 const reviews = [
   {
@@ -10,6 +11,12 @@ const reviews = [
     body: "Antoine est toujours très motivé dans ce qu'il entreprend et se donne toujours à fond pour accomplir au mieux ses missions.",
     img: anaellePicture,
     smiley: "😉",
+  },
+  {
+    name: "Florent. M",
+    body: "Antoine se distingue par son sérieux, sa rigueur et sa grande versatilité. Son excellent travail témoigne d'un grand professionnalisme.",
+    img: florentPicture,
+    smiley: "👍",
   },
 ]
 
@@ -53,22 +60,22 @@ const ReviewCard = ({
   )
 }
 
-const firstRow = reviews.slice(0, reviews.length / 2)
-const secondRow = reviews.slice(reviews.length / 2)
+// const firstRow = reviews.slice(0, reviews.length / 2)
+// const secondRow = reviews.slice(reviews.length / 2)
 
 const ReviewMarquee = () => {
   return (
     <div className="space-y-2">
       <Marquee pauseOnHover className="[--duration:10s]">
-        {firstRow.map((review) => (
+        {reviews.map((review) => (
           <ReviewCard key={review.name} {...review} />
         ))}
       </Marquee>
-      <Marquee reverse pauseOnHover className="[--duration:10s]">
+      {/* <Marquee reverse pauseOnHover className="[--duration:10s]">
         {secondRow.map((review) => (
           <ReviewCard key={review.name} {...review} />
         ))}
-      </Marquee>
+      </Marquee> */}
     </div>
   )
 }
