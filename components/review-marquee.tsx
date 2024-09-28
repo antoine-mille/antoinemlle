@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils"
 
 import anaellePicture from "@/public/images/reviews/anaelle-picture.jpg"
 import florentPicture from "@/public/images/reviews/florent-picture.jpg"
+import julienPicture from "@/public/images/reviews/julien-picture.jpeg"
 
 const reviews = [
   {
@@ -17,6 +18,12 @@ const reviews = [
     body: "Antoine se distingue par son sérieux, sa rigueur et sa grande versatilité. Son excellent travail témoigne d'un grand professionnalisme.",
     img: florentPicture,
     smiley: "👍",
+  },
+  {
+    name: "Julien. D",
+    body: "Antoine saura faire preuve de professionnalisme et d’une grande qualité de travail au sein de vos projets. C'est un élément que j'ai adoré avoir au sein de mon équipe, il a été crucial pour la réussite de nos projets.",
+    img: julienPicture,
+    smiley: "💪",
   },
 ]
 
@@ -34,7 +41,7 @@ const ReviewCard = ({
   return (
     <figure
       className={cn(
-        "relative w-64 cursor-pointer overflow-hidden rounded-xl border p-4 h-36",
+        "relative w-80 cursor-pointer overflow-hidden rounded-xl border p-4 h-40",
         "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]"
       )}
     >
@@ -53,7 +60,7 @@ const ReviewCard = ({
         </div>
         <span>{smiley}</span>
       </div>
-      <blockquote className="mt-2 line-clamp-4 text-xs text-gray-900">
+      <blockquote className="mt-2 line-clamp-5 text-xs text-gray-900">
         {body}
       </blockquote>
     </figure>
