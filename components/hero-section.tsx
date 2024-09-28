@@ -39,9 +39,8 @@ const HeroSection = () => {
           Antoine Mille, <br /> développeur web fullstack !
         </h1>
         <p className="text-center text-gray-600 lg:text-lg">
-          Bienvenue sur mon portfolio, vous trouverez ici &nbsp;
-          <span className="font-medium text-secondary">mes projets</span> et
-          &nbsp;
+          Bienvenue sur mon portfolio, vous trouverez ici{" "}
+          <span className="font-medium text-secondary">mes projets</span> et{" "}
           <span className="font-medium text-secondary">mes expériences</span>.
         </p>
       </div>

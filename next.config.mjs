@@ -6,6 +6,10 @@ const nextConfig = {
         hostname: "img.youtube.com",
         protocol: "https",
       },
+      {
+        hostname: "avatar.vercel.sh",
+        protocol: "https",
+      },
     ],
   },
 }

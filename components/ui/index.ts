@@ -27,3 +27,5 @@ export { type InputProps, Input } from "./input"
 export { type TextareaProps, Textarea } from "./textarea"
 
 export { TextRevealByWord } from "./text-reveal"
+
+export { Marquee } from "./marquee"

@@ -80,7 +80,6 @@ const ContactForm = () => {
 
     setIsSubscribed(true)
     form.reset()
-    console.log(res.message)
   }
 
   useEffect(() => {

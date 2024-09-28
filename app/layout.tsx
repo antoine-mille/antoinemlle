@@ -21,7 +21,7 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  title: "Portfolio de Antoine Mille - Développeur Web",
+  title: "Portfolio de Antoine Mille",
   description: "Portfolio de Antoine Mille, développeur web fullstack",
 }
 

@@ -20,10 +20,10 @@ const TextRevealByWord: FC<TextRevealByWordProps> = ({ text, className }) => {
   const words = text.split(" ")
 
   return (
-    <div ref={targetRef} className={cn("h-[300vh]", className)}>
+    <div ref={targetRef} className={cn("h-[200vh]", className)}>
       <div
         className={
-          "sticky top-0 mx-auto flex flex-col justify-center bg-transparent pt-20"
+          "sticky top-0 mx-auto flex flex-col justify-center bg-transparent pt-16"
         }
       >
         <p
@@ -35,7 +35,7 @@ const TextRevealByWord: FC<TextRevealByWordProps> = ({ text, className }) => {
           {words.map((word, i) => {
             const start = i / words.length
             const end = start + 1 / words.length
-            const isBreak = word.endsWith(".")
+            const isBreak = word.endsWith("%")
             const isImportant = word.startsWith("*")
             return (
               <React.Fragment key={i}>
@@ -44,7 +44,7 @@ const TextRevealByWord: FC<TextRevealByWordProps> = ({ text, className }) => {
                   range={[start, end]}
                   isImportant={isImportant}
                 >
-                  {word.replace("*", "")}
+                  {word.replace(/[*%]/g, "")}
                 </Word>
                 {isBreak && (
                   <>

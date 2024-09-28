@@ -90,7 +90,7 @@ const ProjectSection = () => {
   return (
     <Section id="projects" className="space-y-6">
       <h2 className="text-xl text-gray-900 sm:text-2xl">
-        Mes projets&nbsp;
+        Mes projets{" "}
         <span className="font-semibold text-secondary">réalisés</span>
       </h2>
       <div className="grid gap-8 sm:grid-cols-2 xl:grid-cols-3">
