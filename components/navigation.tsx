@@ -9,13 +9,17 @@ import {
 } from "@/components/ui"
 import { LinkedinIcon, MenuIcon } from "lucide-react"
 import { LinkIcon } from "@/components/link-icon"
+import { getTranslations } from "next-intl/server"
 
-const links = [
-  { href: "/services", label: "Services" },
-  { href: "/#projects", label: "Portfolio" },
-  { href: "/career", label: "Parcours" },
-  { href: "/#contact", label: "Me contacter" },
-]
+async function getLinks() {
+  const t = await getTranslations({ namespace: "Links" })
+  return [
+    { href: "/services", label: t("services") },
+    { href: "/#projects", label: t("portfolio") },
+    { href: "/career", label: t("career") },
+    { href: "/#contact", label: t("contact") },
+  ]
+}
 
 const HeaderLeft = () => {
   return (
@@ -28,18 +32,18 @@ const HeaderLeft = () => {
   )
 }
 
-const MobileNavigation = () => {
+const MobileNavigation = async () => {
+  const links = await getLinks()
+  const t = await getTranslations({ namespace: "MobileNavigation" })
+
   return (
     <Sheet>
       <SheetTrigger className="sm:hidden">
         <MenuIcon className="size-6" />
       </SheetTrigger>
       <SheetContent className="flex flex-col gap-0">
-        <SheetTitle className="text-gray-900">Bienvenue !</SheetTitle>
-        <SheetDescription>
-          Vous trouverez ici mes services, mon portfolio, mon parcours et un
-          moyen de me contacter.
-        </SheetDescription>
+        <SheetTitle className="text-gray-900">{t("title")}</SheetTitle>
+        <SheetDescription>{t("description")}</SheetDescription>
         <nav className="mt-20 flex flex-col items-end gap-4">
           {links.map((link) => (
             <SheetClose asChild key={link.href}>
@@ -54,7 +58,7 @@ const MobileNavigation = () => {
         </nav>
         <div className="mt-auto border-t pt-5">
           <p className="inline-flex items-center gap-3 text-sm text-gray-900">
-            Retrouvez moi sur :
+            {t("socials")}
             <LinkIcon href="https://www.linkedin.com/in/antoinemlle/">
               <LinkedinIcon className="size-5 lg:size-6" />
             </LinkIcon>
@@ -65,7 +69,8 @@ const MobileNavigation = () => {
   )
 }
 
-const Navigation = () => {
+const Navigation = async () => {
+  const links = await getLinks()
   return (
     <nav className="hidden gap-12 sm:flex">
       <div className="flex items-center gap-4 md:gap-6 lg:gap-8">

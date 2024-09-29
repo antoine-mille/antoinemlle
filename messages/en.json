@@ -1,0 +1,82 @@
+{
+  "Metadata": {
+    "title": "Antoine Mille's Portfolio",
+    "description": "Antoine Mille's Portfolio, fullstack web developer"
+  },
+  "Links": {
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "contact": "Contact",
+    "career": "Career"
+  },
+  "MobileNavigation": {
+    "title": "Welcome!",
+    "description": "Here you will find my services, my portfolio, my career and a way to contact me.",
+    "socials": "Find me on:"
+  },
+  "HeroSection": {
+    "title": "Antoine Mille, <br></br> FullStack Web Developer!",
+    "description": "Welcome to my portfolio, you will find here <span>my projects</span> and <span>my experiences</span>.",
+    "subtitle": "My daily technologies"
+  },
+  "BentoSection": {
+    "Career": {
+      "name": "My career",
+      "description": "Discover my professional career and my experiences.",
+      "cta": "Learn more"
+    },
+    "Services": {
+      "name": "My services",
+      "description": "Discover the services I offer.",
+      "cta": "Learn more"
+    }
+  },
+  "ProjectSection": {
+    "title": "My <span>completed</span> projects",
+    "cta": "Learn more",
+    "thumbnailAlt": "Image of the project {project}",
+    "Luxeshop": {
+      "title": "Luxeshop - E-commerce",
+      "description": "E-commerce site, possibility to register, to log in, to search for products, to add them to favorites and to buy them via a Stripe integration.",
+      "context": "Demonstration of my web development skills."
+    },
+    "161": {
+      "title": "Clone of the company 161",
+      "description": "Showcase site of the company 161, presentation of services, achievements and integration of the OpenStreetView map.",
+      "context": "Demonstration of my web development skills."
+    },
+    "MusicPlayer": {
+      "title": "Music Player",
+      "description": "Music player application, integrating the Spotify API. Possibility to authenticate via a Spotify account. Also, possibility to listen to favorite songs, playlists and albums. You can pause the music, skip it, restart it and change the volume.",
+      "context": "Demonstration of my web development skills."
+    }
+  },
+  "ContactSection": {
+    "title": "Do you want to <span>contact</span> me?",
+    "SubmitButton": {
+      "submit": "Submit <icon></icon>",
+      "submitted": "<icon></icon> Sent!"
+    },
+    "Form": {
+      "Email": {
+        "label": "Email address",
+        "placeholder": "Enter your email address",
+        "error": "Please enter a valid email address"
+      },
+      "Subject": {
+        "label": "Subject of the message",
+        "placeholder": "Enter the subject of your message",
+        "error": "Your subject must be at least 5 characters"
+      },
+      "Message": {
+        "label": "Message",
+        "placeholder": "Enter your message",
+        "error": "Your message must be at least 10 characters"
+      }
+    }
+  },
+  "Footer": {
+    "description": "Code your ideas, shape the <span>future</span> of the <span>web</span>.",
+    "rights": "© <date></date> All rights reserved."
+  }
+}

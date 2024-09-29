@@ -3,6 +3,7 @@ import Link from "next/link"
 import { HeroVideoDialog, ShinyButton } from "@/components/magicui"
 import { Badge } from "./badge"
 import { cn } from "@/lib/utils"
+import { useTranslations } from "next-intl"
 
 type ProjectCardProps = {
   title: string
@@ -26,12 +27,16 @@ const ProjectCard = ({
   githubUrl,
   techStack,
 }: ProjectCardProps) => {
+  const t = useTranslations("ProjectSection")
+
   return (
     <article className="flex flex-col gap-3">
       <div className="flex items-center justify-between">
         <div className="flex flex-col">
           <h3 className="text-lg font-medium text-primary">{title}</h3>
-          <p className="text-xs text-gray-700 sm:max-w-xs">{context}</p>
+          <p className="line-clamp-2 h-8 text-xs text-gray-700 sm:max-w-xs">
+            {context}
+          </p>
         </div>
 
         {githubUrl && (
@@ -45,7 +50,9 @@ const ProjectCard = ({
           animationStyle="top-in-bottom-out"
           videoSrc={videoUrl}
           thumbnailSrc={thumbnailSrc}
-          thumbnailAlt="Hero Video"
+          thumbnailAlt={t("thumbnailAlt", {
+            project: title,
+          })}
         />
       )}
       <p
@@ -63,9 +70,7 @@ const ProjectCard = ({
           </Badge>
         ))}
       </div>
-      <ShinyButton className="ml-auto mt-auto w-fit">
-        En savoir plus
-      </ShinyButton>
+      <ShinyButton className="ml-auto mt-auto w-fit">{t("cta")}</ShinyButton>
     </article>
   )
 }

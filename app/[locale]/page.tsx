@@ -1,5 +1,3 @@
-import { DotPattern } from "@/components/magicui"
-import { cn } from "@/lib/utils"
 import { HeroSection } from "@/components/hero-section"
 import { BentoSection } from "@/components/bento-section"
 import { ProjectSection } from "@/components/project-section"

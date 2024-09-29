@@ -1,0 +1,82 @@
+{
+  "Metadata": {
+    "title": "Portfolio de Antoine Mille",
+    "description": "Portfolio de Antoine Mille, développeur web fullstack"
+  },
+  "Links": {
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "contact": "Contact",
+    "career": "Parcours"
+  },
+  "MobileNavigation": {
+    "title": "Bienvenue !",
+    "description": "Vous trouverez ici mes services, mon portfolio, mon parcours et un moyen de me contacter.",
+    "socials": "Retrouvez-moi sur :"
+  },
+  "HeroSection": {
+    "title": "Antoine Mille, <br></br> Développeur Web FullStack !",
+    "description": "Bienvenue sur mon portfolio, vous trouverez ici <span>mes projets</span> et <span>mes expériences</span>.",
+    "subtitle": "Mes technologies quotidiennes"
+  },
+  "BentoSection": {
+    "Career": {
+      "name": "Mon parcours",
+      "description": "Découvrez mon parcours professionnel et mes expériences.",
+      "cta": "En savoir plus"
+    },
+    "Services": {
+      "name": "Mes services",
+      "description": "Découvrez les services que je propose.",
+      "cta": "En savoir plus"
+    }
+  },
+  "ProjectSection": {
+    "title": "Mes projets <span>réalisés</span>",
+    "cta": "En savoir plus",
+    "thumbnailAlt": "Image du projet {project}",
+    "Luxeshop": {
+      "title": "Luxeshop - E-commerce",
+      "description": "Site e-commerce, possibilité de s'inscrire, de se connecter, de rechercher les produits, de les ajouter aux favoris et de les acheter via une intégration Stripe.",
+      "context": "Démonstration de mes compétences en développement web."
+    },
+    "161": {
+      "title": "Clone de l'entreprise 161",
+      "description": "Site vitrine de l'entreprise 161, présentation des services, des réalisations et intégration de la carte OpenStreetView.",
+      "context": "Démonstration de mes compétences en développement web."
+    },
+    "MusicPlayer": {
+      "title": "Music Player",
+      "description": "Application de lecture de musique, intégrant l'API de Spotify. Possibilité de s'authentifier via un compte Spotify. Aussi, possibilité d'écouter les musiques préférées, les playlists et les albums. On peut mettre en pause la musique, la passer, la remettre au début et changer le volume.",
+      "context": "Démonstration de mes compétences en développement web."
+    }
+  },
+  "ContactSection": {
+    "title": "Vous souhaitez me <span>contacter</span> ?",
+    "SubmitButton": {
+      "submit": "Soumettre <icon></icon>",
+      "submitted": "<icon></icon> Envoyé !"
+    },
+    "Form": {
+      "Email": {
+        "label": "Adresse email",
+        "placeholder": "Entrez votre adresse email",
+        "error": "Veuillez entrer une adresse email valide"
+      },
+      "Subject": {
+        "label": "Sujet du message",
+        "placeholder": "Entrez le sujet de votre message",
+        "error": "Votre sujet doit faire au moins 5 caractères"
+      },
+      "Message": {
+        "label": "Message",
+        "placeholder": "Entrez votre message",
+        "error": "Votre message doit faire au moins 10 caractères"
+      }
+    }
+  },
+  "Footer": {
+    "description": "Codez vos idées, façonnez <span>l'avenir</span> du <span>web</span>.",
+    "rights": "© <date></date> Tous droits réservés."
+  }
+}

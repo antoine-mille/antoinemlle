@@ -1,12 +1,15 @@
 import { cn } from "@/lib/utils"
 import { LinkIcon } from "./link-icon"
 import { GithubIcon, LinkedinIcon } from "lucide-react"
+import { useTranslations } from "next-intl"
 
 type FooterProps = {
   className?: string
 }
 
 const Footer = ({ className }: FooterProps) => {
+  const t = useTranslations("Footer")
+
   return (
     <footer
       className={cn(
@@ -19,9 +22,11 @@ const Footer = ({ className }: FooterProps) => {
           Antoine Mille
         </p>
         <p className="max-w-xs text-center text-sm text-gray-300">
-          Codez vos idées, façonnez{" "}
-          <span className="font-medium text-secondary">l’avenir</span> du{" "}
-          <span className="font-medium text-secondary">web</span>.
+          {t.rich("description", {
+            span: (chunks) => (
+              <span className="font-medium text-secondary">{chunks}</span>
+            ),
+          })}
         </p>
       </div>
 
@@ -41,7 +46,9 @@ const Footer = ({ className }: FooterProps) => {
       </div>
 
       <p className="text-xs text-gray-300">
-        &copy; {new Date().getFullYear()} Tous droits réservés.
+        {t.rich("rights", {
+          date: () => new Date().getFullYear(),
+        })}
       </p>
     </footer>
   )

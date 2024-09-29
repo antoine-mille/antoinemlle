@@ -13,24 +13,27 @@ import {
 } from "@/components/ui"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
-import { AnimatedSubscribeButton } from "./magicui"
+import { AnimatedSubscribeButton } from "@/components/magicui"
 import { CheckIcon, ChevronRightIcon } from "lucide-react"
 import { useEffect, useState } from "react"
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3"
-
-const formSchema = z.object({
-  email: z.string().email({
-    message: "Votre adresse email n'est pas valide",
-  }),
-  subject: z.string().min(5, {
-    message: "Le sujet de votre message doit faire au moins 5 caractères",
-  }),
-  message: z.string().min(10, {
-    message: "Votre message doit faire au moins 10 caractères",
-  }),
-})
+import { useTranslations } from "next-intl"
 
 const ContactForm = () => {
+  const t = useTranslations("ContactSection")
+
+  const formSchema = z.object({
+    email: z.string().email({
+      message: t("Form.Email.error"),
+    }),
+    subject: z.string().min(5, {
+      message: t("Form.Subject.error"),
+    }),
+    message: z.string().min(10, {
+      message: t("Form.Message.error"),
+    }),
+  })
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -103,9 +106,9 @@ const ContactForm = () => {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Adresse email</FormLabel>
+              <FormLabel>{t("Form.Email.label")}</FormLabel>
               <FormControl>
-                <Input placeholder="Entrez votre adresse email" {...field} />
+                <Input placeholder={t("Form.Email.placeholder")} {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -116,9 +119,9 @@ const ContactForm = () => {
           name="subject"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Sujet du message</FormLabel>
+              <FormLabel>{t("Form.Subject.label")}</FormLabel>
               <FormControl>
-                <Input placeholder="Entrez votre sujet du message" {...field} />
+                <Input placeholder={t("Form.Subject.placeholder")} {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -129,9 +132,12 @@ const ContactForm = () => {
           name="message"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Message</FormLabel>
+              <FormLabel>{t("Form.Message.label")}</FormLabel>
               <FormControl>
-                <Textarea placeholder="Entrez votre message" {...field} />
+                <Textarea
+                  placeholder={t("Form.Message.placeholder")}
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -140,15 +146,19 @@ const ContactForm = () => {
         <div className="ml-auto mt-2">
           <AnimatedSubscribeButton
             initialText={
-              <span className="group inline-flex items-center text-white">
-                Soumettre&nbsp;
-                <ChevronRightIcon className="ml-1 size-4 transition-transform duration-300 group-hover:translate-x-1" />
+              <span className="group inline-flex items-center gap-2 text-white">
+                {t.rich("SubmitButton.submit", {
+                  icon: () => (
+                    <ChevronRightIcon className="ml-1 size-4 transition-transform duration-300 group-hover:translate-x-1" />
+                  ),
+                })}
               </span>
             }
             changeText={
               <span className="group inline-flex items-center gap-2">
-                <CheckIcon className="size-4" />
-                Envoyé !
+                {t.rich("SubmitButton.submitted", {
+                  icon: () => <CheckIcon className="size-4" />,
+                })}
               </span>
             }
             buttonColor="#111827"
