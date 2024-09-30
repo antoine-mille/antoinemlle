@@ -36,19 +36,22 @@
     "cta": "Learn more",
     "thumbnailAlt": "Image of the project {project}",
     "Luxeshop": {
-      "title": "Luxeshop - E-commerce",
+      "title": "Luxeshop E-commerce",
       "description": "E-commerce site, possibility to register, to log in, to search for products, to add them to favorites and to buy them via a Stripe integration.",
-      "context": "Demonstration of my web development skills."
+      "context": "Demonstration of my web development skills.",
+      "fullDescription": "This site was created to demonstrate my skills in web development. I chose to integrate a mockup found on Dribbble:link=https://dribbble.com/ and to make it fully functional.% The user can authenticate via a Google:link=https://www.google.com/ account, and this system was implemented using NextAuth:link=https://next-auth.js.org/ which manages authentication and sessions. On the homepage, users can find products currently on sale. If they wish, they can add them to their favorites.% They can also perform a search using a search bar to find a specific product. An extension of PostgreSQL:link=https://www.postgresql.org/ has been added to enable more efficient product searches.% The user can also add a product to their cart, remove it, or increase or decrease the quantity. Then, if they wish, they can proceed to checkout and place an order.% To do this, they must enter their shipping information through an interactive interface. Once that is done, they can pay for their order using a Stripe payment form:link=https://stripe.com/fr to secure payments.% If the order is confirmed, the user is redirected to an order confirmation page."
     },
     "161": {
       "title": "Clone of the company 161",
       "description": "Showcase site of the company 161, presentation of services, achievements and integration of the OpenStreetView map.",
-      "context": "Demonstration of my web development skills."
+      "context": "Demonstration of my web development skills.",
+      "fullDescription": ""
     },
     "MusicPlayer": {
       "title": "Music Player",
       "description": "Music player application, integrating the Spotify API. Possibility to authenticate via a Spotify account. Also, possibility to listen to favorite songs, playlists and albums. You can pause the music, skip it, restart it and change the volume.",
-      "context": "Demonstration of my web development skills."
+      "context": "Demonstration of my web development skills.",
+      "fullDescription": ""
     }
   },
   "ContactSection": {
@@ -81,5 +84,10 @@
   },
   "LanguageSwitcher": {
     "title": "Change the language:"
+  },
+  "Project": {
+    "title": "Project presentation <title></title>",
+    "contextTitle": "Project context",
+    "descriptionTitle": "Project description"
   }
 }

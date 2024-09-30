@@ -36,18 +36,21 @@
     "cta": "En savoir plus",
     "thumbnailAlt": "Image du projet {project}",
     "Luxeshop": {
-      "title": "Luxeshop - E-commerce",
+      "title": "Luxeshop E-commerce",
       "description": "Site e-commerce, possibilité de s'inscrire, de se connecter, de rechercher les produits, de les ajouter aux favoris et de les acheter via une intégration Stripe.",
+      "fullDescription": "Ce site a été créé pour démontrer mes compétences en développement web. J’ai choisi d’intégrer une maquette trouvée sur le site Dribbble:link=https://dribbble.com/ et de la rendre entièrement fonctionnelle.% L'utilisateur peut s'authentifier via un compte Google:link=https://www.google.com/ ce système a été implémenté via NextAuth:link=https://next-auth.js.org/ qui permet de gérer l'authentification et les sessions. Sur la page d'accueil, il peut trouver les produits actuellement en promotion. S'il le souhaite, il peut les ajouter à ses favoris.% Il peut aussi, effectuer une recherche via une barre de recherches et donc trouver un produit en particulier. Une extension de PostgreSQL:link=https://www.postgresql.org/ a été ajoutée pour effectuer de la recherche de produits de manière plus efficace.% L'utilisateur peut aussi ajouter un produit à son panier, le supprimer, augmenter ou diminuer la quantité. Puis, s'il le souhaite, il peut valider son panier et donc passer commande.% Pour cela, il doit renseigner ses informations de livraison via une interface interactive. Une fois cela fait, il peut payer sa commande via un formulaire bancaire Stripe:link=https://stripe.com/fr pour sécuriser les paiements.% Si la commande est validée, l'utilisateur est redirigé vers une page de confirmation de commande.",
       "context": "Démonstration de mes compétences en développement web."
     },
     "161": {
       "title": "Clone de l'entreprise 161",
       "description": "Site vitrine de l'entreprise 161, présentation des services, des réalisations et intégration de la carte OpenStreetView.",
+      "fullDescription": "Test",
       "context": "Démonstration de mes compétences en développement web."
     },
     "MusicPlayer": {
       "title": "Music Player",
       "description": "Application de lecture de musique, intégrant l'API de Spotify. Possibilité de s'authentifier via un compte Spotify. Aussi, possibilité d'écouter les musiques préférées, les playlists et les albums. On peut mettre en pause la musique, la passer, la remettre au début et changer le volume.",
+      "fullDescription": "",
       "context": "Démonstration de mes compétences en développement web."
     }
   },
@@ -81,5 +84,10 @@
   },
   "LanguageSwitcher": {
     "title": "Changer de langue :"
+  },
+  "Project": {
+    "title": "Présentation du projet <title></title>",
+    "contextTitle": "Contexte du projet",
+    "descriptionTitle": "Description du projet"
   }
 }

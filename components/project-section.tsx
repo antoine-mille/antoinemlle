@@ -2,15 +2,20 @@ import { ProjectCard } from "@/components/project-card"
 import { Section } from "@/components/section"
 import { getTranslations } from "next-intl/server"
 
-async function getProjects() {
+export async function getProjects() {
   const t = await getTranslations({ namespace: "ProjectSection" })
   return [
     {
+      id: 1,
       title: t("Luxeshop.title"),
       description: t("Luxeshop.description"),
+      fullDescription: t("Luxeshop.fullDescription"),
       context: t("Luxeshop.context"),
       videoUrl: "https://www.youtube.com/embed/JqCkuJsMvKA?si=P6EzkUN259rrh8RO",
       thumbnailSrc: "https://img.youtube.com/vi/JqCkuJsMvKA/maxresdefault.jpg",
+      thumbnailAlt: t.rich("thumbnailAlt", {
+        project: "Luxeshop",
+      }) as string,
       githubUrl: "https://github.com/antoine-mille/luxeshop",
       techStack: [
         {
@@ -40,9 +45,14 @@ async function getProjects() {
       ],
     },
     {
+      id: 2,
       title: t("161.title"),
       description: t("161.description"),
+      fullDescription: t("161.fullDescription"),
       context: t("161.context"),
+      thumbnailAlt: t.rich("thumbnailAlt", {
+        project: "161",
+      }) as string,
       videoUrl: "https://www.youtube.com/embed/pL5-nv7JuvU?si=7qLgv3noR7P-S0Gl",
       thumbnailSrc: "https://img.youtube.com/vi/pL5-nv7JuvU/maxresdefault.jpg",
       techStack: [
@@ -61,9 +71,14 @@ async function getProjects() {
       ],
     },
     {
+      id: 3,
       title: t("MusicPlayer.title"),
       description: t("MusicPlayer.description"),
+      fullDescription: t("MusicPlayer.fullDescription"),
       context: t("MusicPlayer.context"),
+      thumbnailAlt: t.rich("thumbnailAlt", {
+        project: "Music Player",
+      }) as string,
       githubUrl: "https://github.com/antoine-mille/music-player-app",
       techStack: [
         {
@@ -102,7 +117,7 @@ const ProjectSection = async () => {
       </h2>
       <div className="grid gap-8 sm:grid-cols-2 xl:grid-cols-3">
         {projects.map((project) => (
-          <ProjectCard key={project.title} {...project} />
+          <ProjectCard key={project.id} {...project} />
         ))}
       </div>
     </Section>

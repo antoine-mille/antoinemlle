@@ -1,16 +1,21 @@
+"use client"
+
 import { LucideGithub } from "lucide-react"
 import Link from "next/link"
 import { HeroVideoDialog, ShinyButton } from "@/components/magicui"
 import { Badge } from "./badge"
 import { cn } from "@/lib/utils"
 import { useTranslations } from "next-intl"
+import { useRouter } from "@/i18n/routing"
 
 type ProjectCardProps = {
+  id: number
   title: string
   description: string
   context: string
   videoUrl?: string
   thumbnailSrc?: string
+  thumbnailAlt?: string
   githubUrl?: string
   techStack: {
     name: string
@@ -19,15 +24,22 @@ type ProjectCardProps = {
 }
 
 const ProjectCard = ({
+  id,
   title,
   description,
   context,
   videoUrl,
   thumbnailSrc,
+  thumbnailAlt,
   githubUrl,
   techStack,
 }: ProjectCardProps) => {
   const t = useTranslations("ProjectSection")
+  const router = useRouter()
+
+  const handleClick = () => {
+    router.push(`/projects?id=${id}`)
+  }
 
   return (
     <article className="flex flex-col gap-3">
@@ -50,9 +62,7 @@ const ProjectCard = ({
           animationStyle="top-in-bottom-out"
           videoSrc={videoUrl}
           thumbnailSrc={thumbnailSrc}
-          thumbnailAlt={t("thumbnailAlt", {
-            project: title,
-          })}
+          thumbnailAlt={thumbnailAlt}
         />
       )}
       <p
@@ -70,7 +80,9 @@ const ProjectCard = ({
           </Badge>
         ))}
       </div>
-      <ShinyButton className="ml-auto mt-auto w-fit">{t("cta")}</ShinyButton>
+      <ShinyButton onClick={handleClick} className="ml-auto mt-auto w-fit">
+        {t("cta")}
+      </ShinyButton>
     </article>
   )
 }

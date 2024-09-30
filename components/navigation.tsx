@@ -11,6 +11,7 @@ import { LinkedinIcon, MenuIcon } from "lucide-react"
 import { LinkIcon } from "@/components/link-icon"
 import { getTranslations } from "next-intl/server"
 import { FR, GB } from "country-flag-icons/react/3x2"
+import { LanguageSelect } from "./language-select"
 
 async function getLinks() {
   const t = await getTranslations({ namespace: "Links" })
@@ -42,8 +43,6 @@ const MobileNavigation = async () => {
     namespace: "LanguageSwitcher",
   })
 
-  console.log(links)
-
   return (
     <Sheet>
       <SheetTrigger className="sm:hidden">
@@ -72,15 +71,7 @@ const MobileNavigation = async () => {
               <LinkedinIcon className="size-5 lg:size-6" />
             </LinkIcon>
           </p>
-          <div className="flex items-center gap-2">
-            <p className="text-sm text-gray-900">{languageSwitcher("title")}</p>
-            <Link href="/" locale="en">
-              <GB title="United States" className="size-5 hover:opacity-60" />
-            </Link>
-            <Link href="/" locale="fr">
-              <FR title="United States" className="size-5 hover:opacity-60" />
-            </Link>
-          </div>
+          <LanguageSelect className="text-sm text-gray-900" />
         </div>
       </SheetContent>
     </Sheet>
