@@ -2,18 +2,20 @@ import { cn } from "@/lib/utils"
 import { LinkIcon } from "@/components/link-icon"
 import { GithubIcon, LinkedinIcon } from "lucide-react"
 import { useTranslations } from "next-intl"
+import { Link } from "@/i18n/routing"
+import { FR, GB } from "country-flag-icons/react/3x2"
 
 type FooterProps = {
   className?: string
 }
 
 const Footer = ({ className }: FooterProps) => {
-  const t = useTranslations("Footer")
+  const t = useTranslations()
 
   return (
     <footer
       className={cn(
-        "bg-gray-900 w-full flex flex-col gap-4 py-4 items-center justify-center",
+        "relative bg-gray-900 w-full flex flex-col gap-4 py-4 items-center justify-center",
         className
       )}
     >
@@ -22,7 +24,7 @@ const Footer = ({ className }: FooterProps) => {
           Antoine Mille
         </p>
         <p className="max-w-xs text-center text-sm text-gray-300">
-          {t.rich("description", {
+          {t.rich("Footer.description", {
             span: (chunks) => (
               <span className="font-medium text-secondary">{chunks}</span>
             ),
@@ -46,10 +48,20 @@ const Footer = ({ className }: FooterProps) => {
       </div>
 
       <p className="text-xs text-gray-300">
-        {t.rich("rights", {
+        {t.rich("Footer.rights", {
           date: () => new Date().getFullYear(),
         })}
       </p>
+
+      <div className="absolute bottom-4 right-4 hidden items-center gap-2 text-white sm:flex">
+        <p className="text-xs text-gray-300">{t("LanguageSwitcher.title")}</p>
+        <Link href="/" locale="en">
+          <GB title="United States" className="size-5 hover:opacity-60" />
+        </Link>
+        <Link href="/" locale="fr">
+          <FR title="United States" className="size-5 hover:opacity-60" />
+        </Link>
+      </div>
     </footer>
   )
 }

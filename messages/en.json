@@ -78,5 +78,8 @@
   "Footer": {
     "description": "Code your ideas, shape the <span>future</span> of the <span>web</span>.",
     "rights": "© <date></date> All rights reserved."
+  },
+  "LanguageSwitcher": {
+    "title": "Change the language:"
   }
 }

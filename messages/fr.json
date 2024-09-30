@@ -78,5 +78,8 @@
   "Footer": {
     "description": "Codez vos idées, façonnez <span>l'avenir</span> du <span>web</span>.",
     "rights": "© <date></date> Tous droits réservés."
+  },
+  "LanguageSwitcher": {
+    "title": "Changer de langue :"
   }
 }

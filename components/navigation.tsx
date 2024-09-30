@@ -10,6 +10,7 @@ import {
 import { LinkedinIcon, MenuIcon } from "lucide-react"
 import { LinkIcon } from "@/components/link-icon"
 import { getTranslations } from "next-intl/server"
+import { FR, GB } from "country-flag-icons/react/3x2"
 
 async function getLinks() {
   const t = await getTranslations({ namespace: "Links" })
@@ -34,7 +35,12 @@ const HeaderLeft = () => {
 
 const MobileNavigation = async () => {
   const links = await getLinks()
-  const t = await getTranslations({ namespace: "MobileNavigation" })
+  const mobileNavigation = await getTranslations({
+    namespace: "MobileNavigation",
+  })
+  const languageSwitcher = await getTranslations({
+    namespace: "LanguageSwitcher",
+  })
 
   console.log(links)
 
@@ -44,8 +50,10 @@ const MobileNavigation = async () => {
         <MenuIcon className="size-6" />
       </SheetTrigger>
       <SheetContent className="flex flex-col gap-0">
-        <SheetTitle className="text-gray-900">{t("title")}</SheetTitle>
-        <SheetDescription>{t("description")}</SheetDescription>
+        <SheetTitle className="text-gray-900">
+          {mobileNavigation("title")}
+        </SheetTitle>
+        <SheetDescription>{mobileNavigation("description")}</SheetDescription>
         <nav className="mt-20 flex flex-col items-end gap-4">
           {links.map((link) => (
             <Link
@@ -57,13 +65,22 @@ const MobileNavigation = async () => {
             </Link>
           ))}
         </nav>
-        <div className="mt-auto border-t pt-5">
+        <div className="mt-auto space-y-3 border-t pt-5">
           <p className="inline-flex items-center gap-3 text-sm text-gray-900">
-            {t("socials")}
+            {mobileNavigation("socials")}
             <LinkIcon href="https://www.linkedin.com/in/antoinemlle/">
               <LinkedinIcon className="size-5 lg:size-6" />
             </LinkIcon>
           </p>
+          <div className="flex items-center gap-2">
+            <p className="text-sm text-gray-900">{languageSwitcher("title")}</p>
+            <Link href="/" locale="en">
+              <GB title="United States" className="size-5 hover:opacity-60" />
+            </Link>
+            <Link href="/" locale="fr">
+              <FR title="United States" className="size-5 hover:opacity-60" />
+            </Link>
+          </div>
         </div>
       </SheetContent>
     </Sheet>
