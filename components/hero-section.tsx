@@ -1,6 +1,6 @@
 import { ArrowDownButton } from "@/components/arrow-down-button"
 import dynamic from "next/dynamic"
-import { Section } from "./section"
+import { Section } from "@/components/section"
 import { useTranslations } from "next-intl"
 
 const IconCloud = dynamic(

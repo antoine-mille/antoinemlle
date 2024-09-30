@@ -1,4 +1,4 @@
-import Link from "next/link"
+import { Link } from "@/i18n/routing"
 import {
   Sheet,
   SheetClose,
@@ -36,6 +36,8 @@ const MobileNavigation = async () => {
   const links = await getLinks()
   const t = await getTranslations({ namespace: "MobileNavigation" })
 
+  console.log(links)
+
   return (
     <Sheet>
       <SheetTrigger className="sm:hidden">
@@ -46,14 +48,13 @@ const MobileNavigation = async () => {
         <SheetDescription>{t("description")}</SheetDescription>
         <nav className="mt-20 flex flex-col items-end gap-4">
           {links.map((link) => (
-            <SheetClose asChild key={link.href}>
-              <Link
-                href={link.href}
-                className="text-lg font-semibold uppercase text-primary transition-colors duration-300 hover:text-secondary"
-              >
-                {link.label}
-              </Link>
-            </SheetClose>
+            <Link
+              key={link.href}
+              href={link.href}
+              className="text-lg font-semibold uppercase text-primary transition-colors duration-300 hover:text-secondary"
+            >
+              <SheetClose>{link.label}</SheetClose>
+            </Link>
           ))}
         </nav>
         <div className="mt-auto border-t pt-5">

@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils"
-import { LinkIcon } from "./link-icon"
+import { LinkIcon } from "@/components/link-icon"
 import { GithubIcon, LinkedinIcon } from "lucide-react"
 import { useTranslations } from "next-intl"
 
