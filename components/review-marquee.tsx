@@ -25,6 +25,12 @@ const reviews = [
     img: julienPicture,
     smiley: "💪",
   },
+  {
+    name: "Fabio. M",
+    body: "Un développeur toujours partant pour collaborer. Il a su rendre nos designs complexes, simples et agréables à utiliser, tout en travaillant avec rigueur et efficacité.",
+    img: "https://avatar.vercel.sh/fabio",
+    smiley: "🚀",
+  },
 ]
 
 const ReviewCard = ({
@@ -33,7 +39,7 @@ const ReviewCard = ({
   body,
   smiley,
 }: {
-  img: StaticImageData
+  img: StaticImageData | string
   name: string
   body: string
   smiley: string
@@ -73,7 +79,7 @@ const ReviewCard = ({
 const ReviewMarquee = () => {
   return (
     <div className="space-y-2">
-      <Marquee pauseOnHover className="[--duration:10s]">
+      <Marquee pauseOnHover className="[--duration:20s]">
         {reviews.map((review) => (
           <ReviewCard key={review.name} {...review} />
         ))}
