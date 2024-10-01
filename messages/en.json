@@ -45,13 +45,13 @@
       "title": "Clone of the company 161",
       "description": "Showcase site of the company 161, presentation of services, achievements and integration of the OpenStreetView map.",
       "context": "Demonstration of my web development skills.",
-      "fullDescription": ""
+      "fullDescription": "This site was created to showcase my web development skills. I chose to create a clone of the website for the company 161:link=https://161.io/, which is based in Boves, Somme.% Notably, this is also the company where I completed my second-year internship for my IT degree. Many thanks to them for their trust, and especially to my internship supervisor, Mr. Asselin:link=https://www.linkedin.com/in/basselin/, who taught me a great deal.% On this site, users can explore the services offered by the company, the projects they’ve completed, and an OpenStreetMap:link=https://www.openstreetmap.org/ map to locate them.% I also used the Leaflet:link=https://leafletjs.com/ library to integrate the map and make it interactive. Users can zoom in, zoom out, and move around the map."
     },
     "MusicPlayer": {
       "title": "Music Player",
       "description": "Music player application, integrating the Spotify API. Possibility to authenticate via a Spotify account. Also, possibility to listen to favorite songs, playlists and albums. You can pause the music, skip it, restart it and change the volume.",
       "context": "Demonstration of my web development skills.",
-      "fullDescription": ""
+      "fullDescription": "This website was created to showcase my web development skills. I chose to create a music player that integrates the Spotify:link=https://developer.spotify.com/documentation/web-api. API.% This project allowed me to explore this API and understand how it works.% To use the application, the user must authenticate via a Spotify account and launch the app on a Spotify-compatible device.% The user can then listen to their favorite tracks, which I retrieve by making requests to the API.% The user can play, pause, skip tracks, restart them, and adjust the volume.% Although this project is not yet complete, it has given me valuable experience in working with the Spotify:link=https://open.spotify.com/ API and a deeper understanding of its functionality."
     }
   },
   "ContactSection": {

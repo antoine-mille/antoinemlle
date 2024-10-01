@@ -1,8 +1,30 @@
+import React from "react"
 import { ProjectCard } from "@/components/project-card"
 import { Section } from "@/components/section"
 import { getTranslations } from "next-intl/server"
+import { HeroVideoDialog } from "@/components/magicui"
+import { Badge } from "@/components/badge"
+import parse from "html-react-parser"
+import { LinkIcon } from "./link-icon"
+import { GithubIcon } from "lucide-react"
 
-export async function getProjects() {
+export type Project = {
+  id: number
+  title: string
+  description: string
+  fullDescription: string
+  context: string
+  videoUrl?: string
+  thumbnailSrc?: string
+  thumbnailAlt?: string
+  githubUrl?: string
+  techStack: {
+    name: string
+    className: string
+  }[]
+}
+
+export async function getProjects(): Promise<Project[]> {
   const t = await getTranslations({ namespace: "ProjectSection" })
   return [
     {
@@ -102,7 +124,7 @@ export async function getProjects() {
   ]
 }
 
-const ProjectSection = async () => {
+const SmallProjectSection = async () => {
   const t = await getTranslations({ namespace: "ProjectSection" })
 
   const projects = await getProjects()
@@ -117,11 +139,92 @@ const ProjectSection = async () => {
       </h2>
       <div className="grid gap-8 sm:grid-cols-2 xl:grid-cols-3">
         {projects.map((project) => (
-          <ProjectCard key={project.id} {...project} />
+          <ProjectCard key={project.id} project={project} />
         ))}
       </div>
     </Section>
   )
 }
 
-export { ProjectSection }
+type ProjectSectionProps = {
+  project: Project
+}
+
+const ProjectSection = async ({
+  project: {
+    techStack,
+    thumbnailSrc,
+    videoUrl,
+    thumbnailAlt,
+    fullDescription,
+    title,
+    context,
+    githubUrl,
+  },
+}: ProjectSectionProps) => {
+  const t = await getTranslations({ namespace: "Project" })
+
+  return (
+    <Section withDotPattern className="flex h-full flex-col gap-6">
+      <h1 className="text-center text-2xl font-semibold text-gray-900 sm:text-3xl lg:text-4xl">
+        {t.rich("title", {
+          title: () => (
+            <>
+              <br />
+              {title}
+            </>
+          ),
+        })}
+      </h1>
+      {thumbnailSrc && videoUrl && (
+        <HeroVideoDialog
+          animationStyle="top-in-bottom-out"
+          videoSrc={videoUrl}
+          thumbnailSrc={thumbnailSrc}
+          thumbnailAlt={thumbnailAlt}
+          className="z-50 mx-auto w-full max-w-lg"
+        />
+      )}
+      <div className="w-full space-y-3">
+        <div className="flex justify-between rounded-md bg-gray-100/90 px-3 py-2">
+          <h2 className="text-base font-semibold text-primary sm:text-lg">
+            {t("contextTitle")}
+          </h2>
+          {githubUrl && (
+            <LinkIcon href={githubUrl}>
+              <GithubIcon />
+            </LinkIcon>
+          )}
+        </div>
+
+        <p className="text-left text-sm text-gray-700 sm:text-base lg:text-lg">
+          {context}
+        </p>
+      </div>
+      <div className="flex flex-wrap gap-2">
+        {techStack.map((tech) => (
+          <Badge key={tech.name} className={tech.className}>
+            {tech.name}
+          </Badge>
+        ))}
+      </div>
+      <div className="w-full space-y-3">
+        <h2 className="w-full rounded-md bg-gray-100/90 py-2 pl-3 text-base font-semibold text-primary sm:text-lg">
+          {t("descriptionTitle")}
+        </h2>
+        <p className="text-left text-sm text-gray-700 sm:text-base lg:text-lg">
+          {parse(
+            fullDescription
+              .replace(/%/g, "<br /> <br />")
+              .replace(
+                /(\S+)(:link=)(\S+)/g,
+                "<a href='$3' className='text-secondary font-medium duration-300 transition-colors hover:text-secondary/70' target='_blank'>$1</a>"
+              )
+          )}
+        </p>
+      </div>
+    </Section>
+  )
+}
+
+export { ProjectSection, SmallProjectSection }

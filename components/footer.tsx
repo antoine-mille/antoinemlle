@@ -9,12 +9,12 @@ type FooterProps = {
 }
 
 const Footer = ({ className }: FooterProps) => {
-  const t = useTranslations()
+  const t = useTranslations("Footer")
 
   return (
     <footer
       className={cn(
-        "relative bg-gray-900 w-full flex flex-col gap-4 py-4 items-center justify-center",
+        "relative bg-gray-900 w-full flex flex-col gap-4 p-4 items-center justify-center",
         className
       )}
     >
@@ -23,7 +23,7 @@ const Footer = ({ className }: FooterProps) => {
           Antoine Mille
         </p>
         <p className="max-w-xs text-center text-sm text-gray-300">
-          {t.rich("Footer.description", {
+          {t.rich("description", {
             span: (chunks) => (
               <span className="font-medium text-secondary">{chunks}</span>
             ),
@@ -47,7 +47,7 @@ const Footer = ({ className }: FooterProps) => {
       </div>
 
       <p className="text-xs text-gray-300">
-        {t.rich("Footer.rights", {
+        {t.rich("rights", {
           date: () => new Date().getFullYear(),
         })}
       </p>

@@ -44,13 +44,13 @@
     "161": {
       "title": "Clone de l'entreprise 161",
       "description": "Site vitrine de l'entreprise 161, présentation des services, des réalisations et intégration de la carte OpenStreetView.",
-      "fullDescription": "Test",
+      "fullDescription": "Ce site a été créé pour démontrer mes compétences en développement web. J'ai choisi de créer un clone du site de l'entreprise 161:link=https://161.io/ qui est basée à Boves, dans la Somme.% À noter, que c'est aussi, l'entreprise dans laquelle j'ai effectué mon stage de deuxième année de BUT Informatique. Merci à eux pour leur confiance et principalement à mon maître de stage, M. Asselin:link=https://www.linkedin.com/in/basselin/ qui m'a beaucoup appris.% Sur ce site, l'utilisateur peut retrouver les services proposés par l'entreprise, les réalisations effectuées et une carte OpenStreetView:link=https://www.openstreetmap.org/ pour la localiser.% J'ai également utilisé la bibliothèque Leaflet:link=https://leafletjs.com/ pour intégrer la carte et la rendre interactive. L'utilisateur peut zoomer, dézoomer et se déplacer sur la carte.",
       "context": "Démonstration de mes compétences en développement web."
     },
     "MusicPlayer": {
       "title": "Music Player",
       "description": "Application de lecture de musique, intégrant l'API de Spotify. Possibilité de s'authentifier via un compte Spotify. Aussi, possibilité d'écouter les musiques préférées, les playlists et les albums. On peut mettre en pause la musique, la passer, la remettre au début et changer le volume.",
-      "fullDescription": "",
+      "fullDescription": "Ce site a été créé pour démontrer mes compétences en développement web. J'ai choisi de créer un lecteur de musique qui intègre l'API:link=https://developer.spotify.com/documentation/web-api de Spotify.% Ce projet, m'a permis de découvrir cette API, de comprendre son fonctionnement.% Afin de pouvoir utiliser l'application, l'utilisateur doit s'authentifier via un compte Spotify. Puis, lancer l'application sur un appareil compatible avec Spotify.% L'utilisateur peut alors écouter ses musiques préférées que je récupère en effectuant une requête à l'API.% L'utilisateur peut lancer une musique, la mettre en pause, la passer, la remettre au début et changer le volume.% Ce projet n'est pas terminé, mais il m'a permis de découvrir l'API de Spotify:link=https://open.spotify.com/ et de comprendre son fonctionnement.",
       "context": "Démonstration de mes compétences en développement web."
     }
   },

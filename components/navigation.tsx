@@ -10,8 +10,7 @@ import {
 import { LinkedinIcon, MenuIcon } from "lucide-react"
 import { LinkIcon } from "@/components/link-icon"
 import { getTranslations } from "next-intl/server"
-import { FR, GB } from "country-flag-icons/react/3x2"
-import { LanguageSelect } from "./language-select"
+import { LanguageSelect } from "@/components/language-select"
 
 async function getLinks() {
   const t = await getTranslations({ namespace: "Links" })

@@ -3,42 +3,34 @@
 import { LucideGithub } from "lucide-react"
 import Link from "next/link"
 import { HeroVideoDialog, ShinyButton } from "@/components/magicui"
-import { Badge } from "./badge"
+import { Badge } from "@/components/badge"
 import { cn } from "@/lib/utils"
 import { useTranslations } from "next-intl"
 import { useRouter } from "@/i18n/routing"
+import { Project } from "@/components/project-section"
 
 type ProjectCardProps = {
-  id: number
-  title: string
-  description: string
-  context: string
-  videoUrl?: string
-  thumbnailSrc?: string
-  thumbnailAlt?: string
-  githubUrl?: string
-  techStack: {
-    name: string
-    className: string
-  }[]
+  project: Project
 }
 
 const ProjectCard = ({
-  id,
-  title,
-  description,
-  context,
-  videoUrl,
-  thumbnailSrc,
-  thumbnailAlt,
-  githubUrl,
-  techStack,
+  project: {
+    id,
+    title,
+    description,
+    context,
+    videoUrl,
+    thumbnailSrc,
+    thumbnailAlt,
+    githubUrl,
+    techStack,
+  },
 }: ProjectCardProps) => {
   const t = useTranslations("ProjectSection")
   const router = useRouter()
 
   const handleClick = () => {
-    router.push(`/projects?id=${id}`)
+    router.push(`/projects/${id}`)
   }
 
   return (
