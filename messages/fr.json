@@ -110,5 +110,22 @@
       "description": "Vous pouvez ouvrir mon Attestation de Formation au format PDF."
     },
     "cta": "Ouvrir"
+  },
+  "ServiceSection": {
+    "title": "Découvrez les services <br></br> que je propose !",
+    "imageAlt": "Image du service {service}"
+  },
+  "ServiceCard": {
+    "WebDevelopment": {
+      "title": "Développement Web",
+      "description": "Je développe des sites web modernes, réactifs et performants."
+    },
+    "Design": {
+      "title": "Design UI/UX",
+      "description": "Je crée des interfaces utilisateur sur mesure pour vos applications."
+    }
+  },
+  "ReviewSection": {
+    "title": "Retrouvez des <span>avis</span> sur <span>mes services</span>"
   }
 }

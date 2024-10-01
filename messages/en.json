@@ -110,5 +110,22 @@
       "description": "You can open my training certificate in PDF format."
     },
     "cta": "Open"
+  },
+  "ServiceSection": {
+    "title": "Discover the services <br></br> I offer!",
+    "imageAlt": "Image of the service {service}"
+  },
+  "ServiceCard": {
+    "WebDevelopment": {
+      "title": "Web Development",
+      "description": "I develop modern, responsive, and high-performance websites."
+    },
+    "Design": {
+      "title": "UI/UX Design",
+      "description": "I create custom user interfaces for your applications."
+    }
+  },
+  "ReviewSection": {
+    "title": "Find <span>reviews</span> about <span>my services</span>"
   }
 }
