@@ -89,5 +89,26 @@
     "title": "Project presentation <title></title>",
     "contextTitle": "Project context",
     "descriptionTitle": "Project description"
+  },
+  "CareerSection": {
+    "title": "Discover my journey <br></br> in computer science!",
+    "TextReveal": {
+      "1": "*At the age of thirteen, I *started *coding. I was playing a *video *game called *Minecraft.% I *discovered that it was possible to *create *servers to play with friends. So, I *began learning the *Java *language, not too rigorously at first, but enough to develop *my *first *plugins.% Gradually, I *became proficient in *this *language by taking *self-taught courses.",
+      "2": "*I had the opportunity to *collaborate with several major *French-speaking *Minecraft servers, which allowed me to develop over *7 *years of experience in *development.% In *2020, I decided to create my *self-employed business and to launch myself as a *freelancer, thus continuing my journey.% Over the years, I have also turned to *web *development, as you can discover on this *site.% Finally, I graduated with a *Bachelor’s degree in *Computer Science that I obtained from *UPJV *Amiens in 2024."
+    }
+  },
+  "DocumentSection": {
+    "title": "Find my <span>documents</span>"
+  },
+  "DocumentCard": {
+    "CV": {
+      "title": "My <span>Curriculum Vitae</span>",
+      "description": "You can open my Curriculum Vitae in PDF format."
+    },
+    "TrainingCertificate": {
+      "title": "My <span>Training Certificate</span>",
+      "description": "You can open my training certificate in PDF format."
+    },
+    "cta": "Open"
   }
 }
