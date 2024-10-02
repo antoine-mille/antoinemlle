@@ -37,6 +37,13 @@ async function getReview() {
       smiley: "🚀",
       translatedText: t("4"),
     },
+    {
+      name: "Gaben. T",
+      body: "Passionné et impliqué dans son travail, Antoine fait preuve de rigueur afin d'atteindre les objectifs visés. Je suis vivement reconnaissant et m'estime chanceux d'avoir pu compter sur son aide au cours de ces dernières années.",
+      img: "https://avatar.vercel.sh/gaben",
+      smiley: "💯",
+      translatedText: t("5"),
+    },
   ]
 }
 
@@ -47,7 +54,7 @@ const ReviewMarquee = async () => {
   const needsTranslation = locale !== "fr"
 
   return (
-    <Marquee pauseOnHover className="[--duration:20s]">
+    <Marquee pauseOnHover className="[--duration:25s]">
       {reviews.map((review) => (
         <ReviewCard
           key={review.name}
