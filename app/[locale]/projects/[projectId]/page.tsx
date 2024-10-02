@@ -1,4 +1,5 @@
 import { getProjects, ProjectSection } from "@/components/project-section"
+import { notFound } from "next/navigation"
 import React from "react"
 
 export default async function ProjectsPage({
@@ -11,11 +12,11 @@ export default async function ProjectsPage({
   const project = projects.find((project) => project.id === +projectId)
 
   if (!project) {
-    throw new Error(`Project with id ${projectId} not found`)
+    notFound()
   }
 
   return (
-    <main className="size-full">
+    <main className="size-full pb-12">
       <ProjectSection project={project} />
     </main>
   )

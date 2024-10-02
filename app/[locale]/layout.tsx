@@ -45,7 +45,7 @@ export default async function RootLayout({
           <div className="flex size-full flex-col">
             <Header />
             <div className="flex-1">{children}</div>
-            <Footer className="mt-12" />
+            <Footer />
           </div>
         </NextIntlClientProvider>
       </body>

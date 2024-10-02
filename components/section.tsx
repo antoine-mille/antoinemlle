@@ -31,7 +31,7 @@ const Section = ({
           cx={1}
           cy={1}
           cr={1}
-          className="[mask-image:linear-gradient(to_bottom_right,white,transparent,transparent)]"
+          className="-z-30 [mask-image:linear-gradient(to_bottom_right,white,transparent,transparent)]"
         />
       )}
     </section>

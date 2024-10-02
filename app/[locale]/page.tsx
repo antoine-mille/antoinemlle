@@ -7,7 +7,7 @@ import GoogleCaptchaWrapper from "@/components/google-captcha-wrapper"
 export default function Home() {
   return (
     <GoogleCaptchaWrapper>
-      <main className="size-full">
+      <main className="size-full pb-12">
         <HeroSection />
         <BentoSection />
         <SmallProjectSection />

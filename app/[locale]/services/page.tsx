@@ -3,7 +3,7 @@ import { ServicesSection } from "@/components/services-section"
 
 export default function ServicesPage() {
   return (
-    <main className="size-full">
+    <main className="size-full pb-12">
       <ServicesSection />
       <ReviewSection />
     </main>

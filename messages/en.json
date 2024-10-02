@@ -135,5 +135,9 @@
     "2": "Antoine stands out for his seriousness, rigor and great versatility. His excellent work testifies to great professionalism.",
     "3": "Antoine will demonstrate professionalism and great quality of work within your projects. It's an element that I loved having in my team, he was crucial to the success of our projects.",
     "4": "A developer always ready to collaborate. He managed to make our complex designs simple and pleasant to use, while working with rigor and efficiency."
+  },
+  "NotFound": {
+    "title": "Oops! Page not found…",
+    "description": "The page you are looking for does not exist or has been moved. <a>Return to homepage</a>"
   }
 }
