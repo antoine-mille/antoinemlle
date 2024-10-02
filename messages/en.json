@@ -7,7 +7,8 @@
     "services": "Services",
     "portfolio": "Portfolio",
     "contact": "Contact",
-    "career": "Career"
+    "career": "Career",
+    "blog": "Blog"
   },
   "MobileNavigation": {
     "title": "Welcome!",
