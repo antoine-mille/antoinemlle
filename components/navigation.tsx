@@ -12,7 +12,7 @@ import { LinkIcon } from "@/components/link-icon"
 import { getTranslations } from "next-intl/server"
 import { LanguageSelect } from "@/components/language-select"
 import { cn } from "@/lib/utils"
-import { Badge } from "./badge"
+import { Badge } from "@/components/badge"
 
 async function getLinks() {
   const t = await getTranslations({ namespace: "Links" })

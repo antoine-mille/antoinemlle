@@ -15,6 +15,7 @@ const LinkIcon = ({ className, children, href }: LinkIconProps) => {
         "text-primary transition-colors duration-300 hover:text-secondary",
         className
       )}
+      aria-label="Link to external website"
       target="_blank"
     >
       {children}

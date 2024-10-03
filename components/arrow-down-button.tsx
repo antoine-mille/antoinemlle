@@ -22,6 +22,7 @@ const ArrowDownButton = ({ className }: ArrowDownButtonProps) => {
         className
       )}
       onClick={onClick}
+      aria-label="Scroll down"
     >
       <ArrowDownIcon className="size-6 text-primary-foreground transition-colors duration-300 group-hover:text-secondary-foreground" />
     </button>
