@@ -2,11 +2,27 @@ import React from "react"
 import { ProjectCard } from "@/components/project-card"
 import { Section } from "@/components/section"
 import { getTranslations } from "next-intl/server"
-import { HeroVideoDialog } from "@/components/magicui"
+import { HeroContentDialog } from "@/components/magicui"
 import { Badge } from "@/components/badge"
 import parse from "html-react-parser"
-import { LinkIcon } from "./link-icon"
+import { LinkIcon } from "@/components/link-icon"
 import { GithubIcon } from "lucide-react"
+import { StaticImageData } from "next/image"
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui"
+
+import thumbnailGardeMangerApp from "@/public/images/gardemangerapp/thumbnail-gardemangerapp.png"
+import signinGardeMangerApp from "@/public/images/gardemangerapp/signin.png"
+import onboardingGardeMangerApp from "@/public/images/gardemangerapp/onboarding.png"
+import homeGardeMangerApp from "@/public/images/gardemangerapp/home.png"
+import validatePurchasesGardeMangerApp from "@/public/images/gardemangerapp/validate-purchases.png"
+import frigoGardeMangerApp from "@/public/images/gardemangerapp/frigo.png"
+import frigoClickProductGardeMangerApp from "@/public/images/gardemangerapp/frigo-click-product.png"
 
 export type Project = {
   id: number
@@ -15,9 +31,10 @@ export type Project = {
   fullDescription: string
   context: string
   videoUrl?: string
-  thumbnailSrc?: string
+  thumbnailSrc?: string | StaticImageData
   thumbnailAlt?: string
   githubUrl?: string
+  images?: StaticImageData[]
   techStack: {
     name: string
     className: string
@@ -94,6 +111,31 @@ export async function getProjects(): Promise<Project[]> {
     },
     {
       id: 3,
+      title: t("GardeMangerAPP.title"),
+      description: t("GardeMangerAPP.description"),
+      fullDescription: t("GardeMangerAPP.fullDescription"),
+      context: t("GardeMangerAPP.context"),
+      thumbnailAlt: t.rich("thumbnailAlt", {
+        project: "GardeManger App",
+      }) as string,
+      thumbnailSrc: thumbnailGardeMangerApp,
+      images: [
+        onboardingGardeMangerApp,
+        signinGardeMangerApp,
+        homeGardeMangerApp,
+        frigoGardeMangerApp,
+        frigoClickProductGardeMangerApp,
+        validatePurchasesGardeMangerApp,
+      ],
+      techStack: [
+        {
+          name: "Figma",
+          className: "bg-[#F24E1E] text-white",
+        },
+      ],
+    },
+    {
+      id: 4,
       title: t("MusicPlayer.title"),
       description: t("MusicPlayer.description"),
       fullDescription: t("MusicPlayer.fullDescription"),
@@ -137,7 +179,7 @@ const SmallProjectSection = async () => {
           ),
         })}
       </h2>
-      <div className="grid gap-8 sm:grid-cols-2 xl:grid-cols-3">
+      <div className="grid gap-8 sm:grid-cols-2">
         {projects.map((project) => (
           <ProjectCard key={project.id} project={project} />
         ))}
@@ -160,6 +202,7 @@ const ProjectSection = async ({
     title,
     context,
     githubUrl,
+    images,
   },
 }: ProjectSectionProps) => {
   const t = await getTranslations({ namespace: "Project" })
@@ -176,14 +219,41 @@ const ProjectSection = async ({
           ),
         })}
       </h1>
-      {thumbnailSrc && videoUrl && (
-        <HeroVideoDialog
-          animationStyle="top-in-bottom-out"
-          videoSrc={videoUrl}
-          thumbnailSrc={thumbnailSrc}
-          thumbnailAlt={thumbnailAlt}
+      {videoUrl && (
+        <HeroContentDialog
+          video={{
+            src: videoUrl,
+            thumbnail: {
+              src: thumbnailSrc as string,
+              alt: thumbnailAlt,
+            },
+          }}
           className="z-50 mx-auto w-full max-w-lg"
         />
+      )}
+      {images && (
+        <Carousel
+          opts={{
+            align: "start",
+          }}
+          className="mx-auto w-3/4"
+        >
+          <CarouselContent>
+            {images.map((image, index) => (
+              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                <HeroContentDialog
+                  image={{
+                    src: image,
+                    alt: thumbnailAlt,
+                  }}
+                  className="z-50 cursor-pointer select-none"
+                />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="bg-primary text-white" />
+          <CarouselNext className="bg-primary text-white" />
+        </Carousel>
       )}
       <div className="w-full space-y-3">
         <div className="flex justify-between rounded-md bg-gray-100/90 px-3 py-2">

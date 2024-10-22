@@ -2,7 +2,7 @@
 
 import { LucideGithub } from "lucide-react"
 import Link from "next/link"
-import { HeroVideoDialog, ShinyButton } from "@/components/magicui"
+import { HeroContentDialog, ShinyButton } from "@/components/magicui"
 import { Badge } from "@/components/badge"
 import { cn } from "@/lib/utils"
 import { useTranslations } from "next-intl"
@@ -24,14 +24,13 @@ const ProjectCard = ({
     thumbnailAlt,
     githubUrl,
     techStack,
+    images,
   },
 }: ProjectCardProps) => {
   const t = useTranslations("ProjectSection")
   const router = useRouter()
 
-  const handleClick = () => {
-    router.push(`/projects/${id}`)
-  }
+  const handleClick = () => router.push(`/projects/${id}`)
 
   return (
     <article className="flex flex-col gap-3">
@@ -49,14 +48,27 @@ const ProjectCard = ({
           </Link>
         )}
       </div>
-      {videoUrl && thumbnailSrc && (
-        <HeroVideoDialog
-          animationStyle="top-in-bottom-out"
-          videoSrc={videoUrl}
-          thumbnailSrc={thumbnailSrc}
-          thumbnailAlt={thumbnailAlt}
-        />
-      )}
+      <HeroContentDialog
+        animationStyle="top-in-bottom-out"
+        {...(videoUrl
+          ? {
+              video: {
+                src: videoUrl,
+                thumbnail: {
+                  src: thumbnailSrc as string,
+                  alt: thumbnailAlt,
+                },
+              },
+            }
+          : images && thumbnailSrc
+            ? {
+                image: {
+                  src: thumbnailSrc as string,
+                  alt: thumbnailAlt,
+                },
+              }
+            : null)}
+      />
       <p
         className={cn(
           "text-sm text-left text-gray-900 line-clamp-3 h-16",
@@ -72,7 +84,7 @@ const ProjectCard = ({
           </Badge>
         ))}
       </div>
-      <ShinyButton onClick={handleClick} className="ml-auto mt-auto w-fit">
+      <ShinyButton onClick={handleClick} className="ml-auto w-fit">
         {t("cta")}
       </ShinyButton>
     </article>

@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils"
 import { Footer } from "@/components/footer"
 import { NextIntlClientProvider } from "next-intl"
 import { getMessages, getTranslations } from "next-intl/server"
+import { HeroContentAnimatedDialog } from "@/components/magicui"
 
 const poppins = Poppins({
   style: "normal",
@@ -47,6 +48,7 @@ export default async function RootLayout({
             <div className="flex-1">{children}</div>
             <Footer />
           </div>
+          <HeroContentAnimatedDialog animationStyle="left-in-right-out" />
         </NextIntlClientProvider>
       </body>
     </html>

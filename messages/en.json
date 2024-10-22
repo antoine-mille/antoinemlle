@@ -53,6 +53,12 @@
       "description": "Music player application, integrating the Spotify API. Possibility to authenticate via a Spotify account. Also, possibility to listen to favorite songs, playlists and albums. You can pause the music, skip it, restart it and change the volume.",
       "context": "Demonstration of my web development skills.",
       "fullDescription": "This website was created to showcase my web development skills. I chose to create a music player that integrates the Spotify:link=https://developer.spotify.com/documentation/web-api. API. This project allowed me to explore this API and understand how it works.% To use the application, the user must authenticate via a Spotify account and launch the app on a Spotify-compatible device. The user can then listen to their favorite tracks, which I retrieve by making requests to the API. The user can play, pause, skip tracks, restart them, and adjust the volume.% Although this project is not yet complete, it has given me valuable experience in working with the Spotify:link=https://open.spotify.com/ API and a deeper understanding of its functionality."
+    },
+    "GardeMangerAPP": {
+      "title": "GardeManger App",
+      "description": "Creation of the mockups for my GardeManger mobile application. This application allows us to manage our shopping, avoid waste and overconsumption.",
+      "fullDescription": "The goal here was to create the different mockups for my GardeManger application. This application is designed to help us manage our shopping, avoid waste, and prevent overconsumption.% I created the various interfaces for the application, taking care to follow UX/UI design principles. I used Figma:link=https://www.figma.com/ to create these mockups. I made sure to use the application's colors, choose suitable icons, and create an intuitive interface for the user.% Although this project is not yet complete, it will be available on the various app stores in a few months.",
+      "context": "Mobile application development."
     }
   },
   "ContactSection": {

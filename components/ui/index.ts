@@ -29,3 +29,12 @@ export { type TextareaProps, Textarea } from "./textarea"
 export { TextRevealByWord } from "./text-reveal"
 
 export { Marquee } from "./marquee"
+
+export {
+  type CarouselApi,
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+} from "./carousel"
