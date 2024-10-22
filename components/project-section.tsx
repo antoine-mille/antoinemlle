@@ -251,8 +251,8 @@ const ProjectSection = async ({
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="bg-primary text-white" />
-          <CarouselNext className="bg-primary text-white" />
+          <CarouselPrevious className="bg-primary text-white hover:bg-secondary hover:text-secondary-foreground" />
+          <CarouselNext className="bg-primary text-white hover:bg-secondary hover:text-secondary-foreground" />
         </Carousel>
       )}
       <div className="w-full space-y-3">
