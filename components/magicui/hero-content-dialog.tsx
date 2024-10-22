@@ -107,7 +107,7 @@ function HeroContentDialog({
           alt={image.alt || "Image content"}
           width={271}
           height={383}
-          className="mx-auto aspect-[3_4] max-h-96 w-fit"
+          className="mx-auto aspect-[3_4] max-h-96 w-auto"
           onClick={() => handleClick()}
         />
       )}
