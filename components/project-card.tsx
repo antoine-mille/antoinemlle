@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils"
 import { useTranslations } from "next-intl"
 import { useRouter } from "@/i18n/routing"
 import { Project } from "@/components/project-section"
+import { StaticImageData } from "next/image"
 
 type ProjectCardProps = {
   project: Project
@@ -49,7 +50,6 @@ const ProjectCard = ({
         )}
       </div>
       <HeroContentDialog
-        animationStyle="top-in-bottom-out"
         {...(videoUrl
           ? {
               video: {
@@ -60,15 +60,17 @@ const ProjectCard = ({
                 },
               },
             }
-          : images && thumbnailSrc
+          : images
             ? {
                 image: {
-                  src: thumbnailSrc as string,
+                  src: thumbnailSrc as StaticImageData,
                   alt: thumbnailAlt,
                 },
+                className: "cursor-pointer",
               }
             : null)}
       />
+
       <p
         className={cn(
           "text-sm text-left text-gray-900 line-clamp-3 h-16",
