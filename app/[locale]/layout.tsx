@@ -27,6 +27,27 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: t("title"),
     description: t("description"),
+    keywords: [
+      "Développeur",
+      "Web",
+      "FullStack",
+      "React",
+      "Next.js",
+      "TypeScript",
+      "TailwindCSS",
+      "Node.js",
+      "JavaScript",
+      "Java",
+      "Caen",
+      "Saint-Lô",
+      "France",
+      "Portfolio",
+      "Projets",
+    ],
+    openGraph: {
+      title: t("title"),
+      description: t("description"),
+    },
   }
 }
 
